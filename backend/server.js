@@ -20,7 +20,9 @@ app.use(express.json());
 app.use("/", cartRoutes);
 
 // define the port
-const port = 3000;
+const DEFAULT_PORT = 3000;
+//Heroku port
+const port = process.env.PORT || DEFAULT_PORT;
 
 // run the server
 app.listen(port, () => console.log(`Listening on port: ${port}.`));
